@@ -8,11 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EntryListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+    }
+
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        <#code#>
     }
 
     override func didReceiveMemoryWarning() {

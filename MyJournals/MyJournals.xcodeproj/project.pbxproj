@@ -8,21 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		7977FF731FDA2EB30001C09C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977FF721FDA2EB30001C09C /* AppDelegate.swift */; };
-		7977FF751FDA2EB30001C09C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977FF741FDA2EB30001C09C /* ViewController.swift */; };
+		7977FF751FDA2EB30001C09C /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977FF741FDA2EB30001C09C /* EntryListTableViewController.swift */; };
 		7977FF781FDA2EB30001C09C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7977FF761FDA2EB30001C09C /* Main.storyboard */; };
 		7977FF7A1FDA2EB30001C09C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7977FF791FDA2EB30001C09C /* Assets.xcassets */; };
 		7977FF7D1FDA2EB30001C09C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7977FF7B1FDA2EB30001C09C /* LaunchScreen.storyboard */; };
+		7977FF851FDA30260001C09C /* EntryCreatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977FF841FDA30260001C09C /* EntryCreatingViewController.swift */; };
+		7977FF871FDA30580001C09C /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977FF861FDA30580001C09C /* EntryTableViewCell.swift */; };
 		D0CE7406E3B9E8F67CEE276E /* Pods_MyJournals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1AF19A8296AABE4BC5DB90 /* Pods_MyJournals.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7977FF6F1FDA2EB30001C09C /* MyJournals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyJournals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7977FF721FDA2EB30001C09C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7977FF741FDA2EB30001C09C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7977FF741FDA2EB30001C09C /* EntryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = "<group>"; };
 		7977FF771FDA2EB30001C09C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7977FF791FDA2EB30001C09C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7977FF7C1FDA2EB30001C09C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7977FF7E1FDA2EB30001C09C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7977FF841FDA30260001C09C /* EntryCreatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCreatingViewController.swift; sourceTree = "<group>"; };
+		7977FF861FDA30580001C09C /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		8E3664DEFF4FA0DFC49A92B4 /* Pods-MyJournals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJournals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyJournals/Pods-MyJournals.debug.xcconfig"; sourceTree = "<group>"; };
 		9453B48A887832A3FB1B51CB /* Pods-MyJournals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJournals.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyJournals/Pods-MyJournals.release.xcconfig"; sourceTree = "<group>"; };
 		BE1AF19A8296AABE4BC5DB90 /* Pods_MyJournals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyJournals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +74,9 @@
 			isa = PBXGroup;
 			children = (
 				7977FF721FDA2EB30001C09C /* AppDelegate.swift */,
-				7977FF741FDA2EB30001C09C /* ViewController.swift */,
+				7977FF861FDA30580001C09C /* EntryTableViewCell.swift */,
+				7977FF741FDA2EB30001C09C /* EntryListTableViewController.swift */,
+				7977FF841FDA30260001C09C /* EntryCreatingViewController.swift */,
 				7977FF761FDA2EB30001C09C /* Main.storyboard */,
 				7977FF791FDA2EB30001C09C /* Assets.xcassets */,
 				7977FF7B1FDA2EB30001C09C /* LaunchScreen.storyboard */,
@@ -219,7 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7977FF751FDA2EB30001C09C /* ViewController.swift in Sources */,
+				7977FF871FDA30580001C09C /* EntryTableViewCell.swift in Sources */,
+				7977FF751FDA2EB30001C09C /* EntryListTableViewController.swift in Sources */,
+				7977FF851FDA30260001C09C /* EntryCreatingViewController.swift in Sources */,
 				7977FF731FDA2EB30001C09C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
