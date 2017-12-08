@@ -65,7 +65,24 @@ class EntryCreatingViewController: UIViewController {
     }
 
     @objc func saveInCoreData(){
-
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            let journalContext = appDelegate.persistentContainer.viewContext
+            let newJournal = Journal(context: journalContext)
+            newJournal.journalID = UUID()
+            newJournal.title = journalTitleTextField.text
+            newJournal.content = contentTextView.text
+            guard let imageData = UIImageJPEGRepresentation(imageView.image!, 1) else {
+                // handle failed conversion
+                print("jpg error")
+                return
+            }
+            print(imageData)
+            newJournal.image = imageData
+            newJournal.created = Date()
+            appDelegate.saveContext()
+        } else {
+            fatalError()
+        }
     }
 
     @objc func cancelBackEntryList() {
