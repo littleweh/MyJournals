@@ -12,6 +12,7 @@ import ImagePicker
 
 class EntryCreatingViewController: UIViewController {
 
+    @IBOutlet weak var pickImageLabel: UILabel!
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var journalTitleTextField: UITextField!
@@ -25,6 +26,9 @@ class EntryCreatingViewController: UIViewController {
     var journalID: UUID? = nil
     var journals: [Journal]? = nil {
         didSet {
+            self.pickImageLabel.isHidden = true
+            imageView.contentMode = .scaleAspectFill
+            gradientView.isHidden = true
             self.view.reloadInputViews()
         }
     }
@@ -81,10 +85,6 @@ class EntryCreatingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func showJournalData() {
-        
-    }
-
     @objc func saveInCoreData(){
         if journalID == nil {
             CoreDataHandler.saveObject(
@@ -106,6 +106,12 @@ class EntryCreatingViewController: UIViewController {
     func setupUI() {
 
         setupGradientView()
+
+        let templateImage = imageView.image?.withRenderingMode(.alwaysTemplate)
+        imageView.image = templateImage
+        imageView.tintColor = .white
+
+        pickImageLabel.text = NSLocalizedString("Tap to load photo", comment: "")
 
     }
 
@@ -133,6 +139,8 @@ extension EntryCreatingViewController: ImagePickerDelegate {
 
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         imageView.image = images[0]
+        imageView.contentMode = .scaleAspectFill
+        gradientView.isHidden = true
         dismiss(animated: true, completion: nil)
 
     }

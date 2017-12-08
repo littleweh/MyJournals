@@ -75,6 +75,7 @@ extension EntryListViewController: UITableViewDelegate, UITableViewDataSource {
         if let myJournals = journals {
             if let imageData = myJournals[indexPath.row].image as? Data {
                 let image = UIImage(data: imageData)
+                cell.photoImageView.contentMode = .scaleAspectFill
                 cell.photoImageView.image = image
             }
             cell.titleLabel.text = myJournals[indexPath.row].title
@@ -109,7 +110,7 @@ extension EntryListViewController: UITableViewDelegate, UITableViewDataSource {
                 handler: { (action: UIAlertAction!) in
                     let journalID = self.journals![indexPath.row].journalID
                     self.coreDataHandler.deleteJournal(with: journalID!)
-                    self.coreDataHandler.fetchJournals()
+                    self.journals = self.coreDataHandler.fetchJournals()
             }))
 
             deleteAlert.addAction(UIAlertAction(
