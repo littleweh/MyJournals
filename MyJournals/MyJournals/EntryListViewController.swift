@@ -86,6 +86,36 @@ extension EntryListViewController: UITableViewDelegate, UITableViewDataSource {
 
     }
 
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let deleteAlert = UIAlertController(
+                title: NSLocalizedString("Delete Journal?", comment: ""),
+                message: NSLocalizedString("Confirm to delete this Journal", comment: ""),
+                preferredStyle: UIAlertControllerStyle.alert)
+
+            deleteAlert.addAction(UIAlertAction(
+                title: NSLocalizedString("Ok", comment: ""),
+                style: .default,
+                handler: { (action: UIAlertAction!) in
+                    let journalID = self.journals![indexPath.row].journalID
+                    self.coreDataHandler.deleteJournal(with: journalID!)
+                    self.coreDataHandler.fetchJournals()
+            }))
+
+            deleteAlert.addAction(UIAlertAction(
+                title: NSLocalizedString("Cancel", comment: ""),
+                style: .cancel,
+                handler: { (action: UIAlertAction!) in
+            }))
+
+            present(deleteAlert, animated: true, completion: nil)
+        }
+    }
+
 
 }
 

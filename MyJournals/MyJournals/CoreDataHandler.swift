@@ -102,9 +102,29 @@ class CoreDataHandler: NSObject {
         }
     }
 
+    public func deleteJournal(with journalID: UUID) {
+        let journalContext = CoreDataHandler.getContext
+        let fetchRequest: NSFetchRequest<Journal> = Journal.fetchRequest()
+        let predicate = NSPredicate(format: "journalID == %@", journalID as CVarArg)
+        fetchRequest.predicate = predicate
+        do {
+            let results = try journalContext().fetch(fetchRequest)
+            if results.count > 0 {
+                for journal in results {
+                    journalContext().delete(journal)
+                }
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
+                appDelegate.saveContext()
+            } else {
+                print("journal to be deleted is not found")
+            }
 
+        } catch let error {
+            print("deleteJournal with \(journalID) error: \(error)")
+        }
 
+    }
 
 }
 
