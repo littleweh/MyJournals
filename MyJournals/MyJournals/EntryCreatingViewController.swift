@@ -36,6 +36,10 @@ class EntryCreatingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.journalTitleTextField.delegate = self
+        self.contentTextView.delegate = self
+
         cancelButton.addTarget(
             self,
             action: #selector(cancelBackEntryList),
@@ -103,6 +107,11 @@ class EntryCreatingViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    @objc func imageTapped() {
+        present(imagePickerController, animated: true, completion: nil)
+
+    }
+
     func setupUI() {
 
         setupGradientView()
@@ -112,6 +121,8 @@ class EntryCreatingViewController: UIViewController {
         imageView.tintColor = .white
 
         pickImageLabel.text = NSLocalizedString("Tap to load photo", comment: "")
+
+        journalTitleTextField.isFirstResponder
 
     }
 
@@ -150,8 +161,27 @@ extension EntryCreatingViewController: ImagePickerDelegate {
 
     }
 
-    @objc func imageTapped() {
-        present(imagePickerController, animated: true, completion: nil)
 
+}
+
+extension EntryCreatingViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        journalTitleTextField.resignFirstResponder()
+        return true
+    }
+}
+
+extension EntryCreatingViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            view.endEditing(true)
+            return false
+        } else {
+            return true
+        }
     }
 }
