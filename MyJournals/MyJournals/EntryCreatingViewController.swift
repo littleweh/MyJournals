@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import CoreData
 import ImagePicker
 
 class EntryCreatingViewController: UIViewController {
 
 
 
+    @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var journalTitleTextField: UITextField!
     @IBOutlet weak var buttonContainerView: UIView!
@@ -72,22 +74,18 @@ class EntryCreatingViewController: UIViewController {
 
     func setupUI() {
 
-        setupImageGradientView()
+        setupGradientView()
 
-        contentTextView.sizeToFit()
-        contentTextView.layoutIfNeeded()
-        contentTextViewHeightConstraint.constant = contentTextView.intrinsicContentSize.height
-        
     }
 
-    private func setupImageGradientView() {
+    private func setupGradientView() {
 
         gradientLayer.colors = [
             UIColor(red: 67.0 / 255.0, green: 87.0 / 255.0, blue: 97.0 / 255.0, alpha: 1.0).cgColor,
             UIColor(red: 26.0 / 255.0, green: 34.0 / 255.0, blue: 38.0 / 255.0, alpha: 1.0).cgColor
         ]
 
-        imageView.layer.addSublayer(gradientLayer)
+        gradientView.layer.addSublayer(gradientLayer)
 
     }
 
@@ -109,7 +107,6 @@ extension EntryCreatingViewController: ImagePickerDelegate {
     }
 
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
-        dismiss(animated: true, completion: nil)
         dismiss(animated: true, completion: nil)
 
     }
