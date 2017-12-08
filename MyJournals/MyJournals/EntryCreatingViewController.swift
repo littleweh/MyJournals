@@ -20,10 +20,13 @@ class EntryCreatingViewController: UIViewController {
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+
     let gradientLayer = CAGradientLayer()
     let imagePickerController = ImagePickerController()
     let coreDataHandler = CoreDataHandler()
+
     var journalID: UUID? = nil
+
     var journals: [Journal]? = nil {
         didSet {
             self.pickImageLabel.isHidden = true
@@ -33,12 +36,16 @@ class EntryCreatingViewController: UIViewController {
         }
     }
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.journalTitleTextField.delegate = self
         self.contentTextView.delegate = self
+
+        imagePickerController.delegate = self
+        imagePickerController.imageLimit = 1
+
+        setupUI()
 
         cancelButton.addTarget(
             self,
@@ -56,13 +63,16 @@ class EntryCreatingViewController: UIViewController {
         imageView.addGestureRecognizer(tap)
         imageView.isUserInteractionEnabled = true
 
+        showJournal()
 
-        imagePickerController.delegate = self
-        imagePickerController.imageLimit = 1
+    }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        gradientLayer.frame = imageView.bounds
+    }
 
-        setupUI()
-
+    func showJournal() {
         if let journalId = journalID {
             journals = coreDataHandler.fetchJournalWith(journalID: journalId)
 
@@ -75,19 +85,8 @@ class EntryCreatingViewController: UIViewController {
                 contentTextView.text = myJournals[0].content
             }
         }
-
-        // Do any additional setup after loading the view.
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        gradientLayer.frame = imageView.bounds
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     @objc func saveInCoreData(){
         if journalID == nil {
@@ -97,7 +96,12 @@ class EntryCreatingViewController: UIViewController {
                 image: imageView.image
             )
         } else {
-            coreDataHandler.updateJournalWith(journalID: journalID!, journalTitle: journalTitleTextField.text, journalContent: contentTextView.text, image: imageView.image)
+            coreDataHandler.updateJournalWith(
+                journalID: journalID!,
+                journalTitle: journalTitleTextField.text,
+                journalContent: contentTextView.text,
+                image: imageView.image
+            )
         }
         dismiss(animated: true, completion: nil)
 
@@ -122,7 +126,7 @@ class EntryCreatingViewController: UIViewController {
 
         pickImageLabel.text = NSLocalizedString("Tap to load photo", comment: "")
 
-        journalTitleTextField.isFirstResponder
+        journalTitleTextField.becomeFirstResponder()
 
     }
 
@@ -136,10 +140,6 @@ class EntryCreatingViewController: UIViewController {
         gradientView.layer.addSublayer(gradientLayer)
 
     }
-
-    
-
-
 
 }
 

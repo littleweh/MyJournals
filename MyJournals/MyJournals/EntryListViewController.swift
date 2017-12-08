@@ -11,6 +11,7 @@ import CoreData
 
 class EntryListViewController: UIViewController {
     let cellID = "EntryTableViewCell"
+
     var journals: [Journal]? = nil {
         didSet {
             journals = journals?.sorted(by: { (journal1, journal2) -> Bool in
@@ -30,40 +31,35 @@ class EntryListViewController: UIViewController {
 
         entryTableView.delegate = self
         entryTableView.dataSource = self
+
         createNewJournalButton.addTarget(
             self,
             action: #selector(presentNewEntryViewController),
             for: .touchUpInside
         )
 
-        journals = coreDataHandler.fetchJournals()
-
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        journals = coreDataHandler.fetchJournals()
-    }
 
+        journals = coreDataHandler.fetchJournals()
+
+    }
 
     @objc func presentNewEntryViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "EntryCreatingViewController") as! EntryCreatingViewController
         present(viewController, animated: true, completion: nil)
     }
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
+
 
 extension EntryListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let myJournals = journals else {return 0}
+        guard
+            let myJournals = journals
+        else { return 0 }
         return myJournals.count
     }
 
@@ -73,11 +69,14 @@ extension EntryListViewController: UITableViewDelegate, UITableViewDataSource {
         else { fatalError() }
 
         if let myJournals = journals {
-            if let imageData = myJournals[indexPath.row].image as? Data {
+            if let imageData: Data = myJournals[indexPath.row].image {
                 let image = UIImage(data: imageData)
+
                 cell.photoImageView.contentMode = .scaleAspectFill
                 cell.photoImageView.image = image
+
             }
+
             cell.titleLabel.text = myJournals[indexPath.row].title
         }
 
@@ -98,6 +97,7 @@ extension EntryListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             let deleteAlert = UIAlertController(
                 title: NSLocalizedString("Delete Journal?", comment: ""),
@@ -108,15 +108,20 @@ extension EntryListViewController: UITableViewDelegate, UITableViewDataSource {
                 title: NSLocalizedString("Ok", comment: ""),
                 style: .default,
                 handler: { (action: UIAlertAction!) in
+
                     let journalID = self.journals![indexPath.row].journalID
                     self.coreDataHandler.deleteJournal(with: journalID!)
                     self.journals = self.coreDataHandler.fetchJournals()
+
             }))
 
             deleteAlert.addAction(UIAlertAction(
                 title: NSLocalizedString("Cancel", comment: ""),
                 style: .cancel,
                 handler: { (action: UIAlertAction!) in
+
+                    self.entryTableView.reloadData()
+
             }))
 
             present(deleteAlert, animated: true, completion: nil)
