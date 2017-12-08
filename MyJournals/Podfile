@@ -7,9 +7,7 @@ target 'MyJournals' do
 
   # Pods for MyJournals
   pod 'SwiftLint'
-  pod 'BNRCoreDataStack', '~> 2.3'
   pod 'IQKeyboardManagerSwift', '~> 5.0'
   pod 'ImagePicker', '~> 3.0'
-  pod 'ESPullToRefresh', '~> 2.7'
   
 end
