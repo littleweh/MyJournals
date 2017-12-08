@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import ImagePicker
 
 class EntryCreatingViewController: UIViewController {
+
+
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var journalTitleTextField: UITextField!
@@ -17,6 +20,7 @@ class EntryCreatingViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     let gradientLayer = CAGradientLayer()
+    let imagePickerController = ImagePickerController()
 
     @IBOutlet weak var contentTextViewHeightConstraint: NSLayoutConstraint!
     
@@ -33,6 +37,15 @@ class EntryCreatingViewController: UIViewController {
             action: #selector(saveInCoreData),
             for: .touchUpInside
         )
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        imageView.addGestureRecognizer(tap)
+        imageView.isUserInteractionEnabled = true
+
+
+        imagePickerController.delegate = self
+        imagePickerController.imageLimit = 1
+
 
         setupUI()
 
@@ -82,4 +95,27 @@ class EntryCreatingViewController: UIViewController {
 
 
 
+}
+
+extension EntryCreatingViewController: ImagePickerDelegate {
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        dismiss(animated: true, completion: nil)
+    }
+
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        imageView.image = images[0]
+        dismiss(animated: true, completion: nil)
+
+    }
+
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
+
+    }
+
+    @objc func imageTapped() {
+        present(imagePickerController, animated: true, completion: nil)
+
+    }
 }
