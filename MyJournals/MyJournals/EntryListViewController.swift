@@ -13,6 +13,9 @@ class EntryListViewController: UIViewController {
     let cellID = "EntryTableViewCell"
     var journals: [Journal]? = nil {
         didSet {
+            journals = journals?.sorted(by: { (journal1, journal2) -> Bool in
+                return journal1.created! > journal2.created!
+            })
             self.entryTableView.reloadData()
         }
     }
@@ -35,8 +38,11 @@ class EntryListViewController: UIViewController {
 
         journals = coreDataHandler.fetchJournals()
 
+    }
 
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        journals = coreDataHandler.fetchJournals()
     }
 
 
