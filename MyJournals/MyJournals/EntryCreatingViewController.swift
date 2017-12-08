@@ -12,8 +12,6 @@ import ImagePicker
 
 class EntryCreatingViewController: UIViewController {
 
-
-
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var journalTitleTextField: UITextField!
@@ -23,9 +21,15 @@ class EntryCreatingViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     let gradientLayer = CAGradientLayer()
     let imagePickerController = ImagePickerController()
+    let coreDataHandler = CoreDataHandler()
+    var journalID: UUID? = nil
+    var journals: [Journal]? = nil {
+        didSet {
+            self.view.reloadInputViews()
+        }
+    }
 
-    @IBOutlet weak var contentTextViewHeightConstraint: NSLayoutConstraint!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         cancelButton.addTarget(
@@ -51,6 +55,19 @@ class EntryCreatingViewController: UIViewController {
 
         setupUI()
 
+        if let journalId = journalID {
+            journals = coreDataHandler.fetchJournalWith(journalID: journalId)
+
+            if let myJournals = journals {
+                if let imageData = myJournals[0].image {
+                    let image = UIImage(data: imageData)
+                    imageView.image = image
+                }
+                journalTitleTextField.text = myJournals[0].title
+                contentTextView.text = myJournals[0].content
+            }
+        }
+
         // Do any additional setup after loading the view.
     }
 
@@ -64,25 +81,22 @@ class EntryCreatingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func showJournalData() {
+        
+    }
+
     @objc func saveInCoreData(){
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            let journalContext = appDelegate.persistentContainer.viewContext
-            let newJournal = Journal(context: journalContext)
-            newJournal.journalID = UUID()
-            newJournal.title = journalTitleTextField.text
-            newJournal.content = contentTextView.text
-            guard let imageData = UIImageJPEGRepresentation(imageView.image!, 1) else {
-                // handle failed conversion
-                print("jpg error")
-                return
-            }
-            print(imageData)
-            newJournal.image = imageData
-            newJournal.created = Date()
-            appDelegate.saveContext()
+        if journalID == nil {
+            CoreDataHandler.saveObject(
+                journalTitle: journalTitleTextField.text,
+                journalContent: contentTextView.text,
+                image: imageView.image
+            )
         } else {
-            fatalError()
+            coreDataHandler.updateJournalWith(journalID: journalID!, journalTitle: journalTitleTextField.text, journalContent: contentTextView.text, image: imageView.image)
         }
+        dismiss(animated: true, completion: nil)
+
     }
 
     @objc func cancelBackEntryList() {

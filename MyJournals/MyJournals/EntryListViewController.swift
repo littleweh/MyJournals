@@ -20,6 +20,8 @@ class EntryListViewController: UIViewController {
     @IBOutlet weak var entryTableView: UITableView!
     @IBOutlet weak var createNewJournalButton: UIButton!
 
+    let coreDataHandler = CoreDataHandler()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,41 +33,18 @@ class EntryListViewController: UIViewController {
             for: .touchUpInside
         )
 
-        journals = showJournals()
+        journals = coreDataHandler.fetchJournals()
 
 
 
-    }
-
-    func showJournals() -> [Journal]? {
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-            let journalObject = appDelegate.persistentContainer.viewContext
-            let query: NSFetchRequest<Journal> = Journal.fetchRequest()
-
-            do {
-                let searchResult = try journalObject.fetch(query)
-                if searchResult.count > 0 {
-                    return searchResult
-                } else {
-                    return nil
-                }
-            } catch {
-                print(error)
-                return nil
-            }
-        } else {
-            fatalError()
-        }
     }
 
 
     @objc func presentNewEntryViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "EntryCreatingViewController") as UIViewController
+        let viewController = storyboard.instantiateViewController(withIdentifier: "EntryCreatingViewController") as! EntryCreatingViewController
         present(viewController, animated: true, completion: nil)
     }
-
-
     
 
     override func didReceiveMemoryWarning() {
@@ -100,8 +79,11 @@ extension EntryListViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "EntryCreatingViewController") as UIViewController
+        let viewController = storyboard.instantiateViewController(withIdentifier: "EntryCreatingViewController") as! EntryCreatingViewController
+        let journalID = journals![indexPath.row].journalID
+        viewController.journalID = journalID
         present(viewController, animated: true, completion: nil)
+
     }
 
 
