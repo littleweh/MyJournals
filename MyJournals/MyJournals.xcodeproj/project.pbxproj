@@ -14,6 +14,7 @@
 		7977FF7D1FDA2EB30001C09C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7977FF7B1FDA2EB30001C09C /* LaunchScreen.storyboard */; };
 		7977FF851FDA30260001C09C /* EntryCreatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977FF841FDA30260001C09C /* EntryCreatingViewController.swift */; };
 		7977FF871FDA30580001C09C /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977FF861FDA30580001C09C /* EntryTableViewCell.swift */; };
+		7977FFAB1FDA4D520001C09C /* MyJournals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7977FFA91FDA4D520001C09C /* MyJournals.xcdatamodeld */; };
 		D0CE7406E3B9E8F67CEE276E /* Pods_MyJournals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1AF19A8296AABE4BC5DB90 /* Pods_MyJournals.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		7977FF7E1FDA2EB30001C09C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7977FF841FDA30260001C09C /* EntryCreatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCreatingViewController.swift; sourceTree = "<group>"; };
 		7977FF861FDA30580001C09C /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
+		7977FFAA1FDA4D520001C09C /* tt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tt.xcdatamodel; sourceTree = "<group>"; };
 		8E3664DEFF4FA0DFC49A92B4 /* Pods-MyJournals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJournals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyJournals/Pods-MyJournals.debug.xcconfig"; sourceTree = "<group>"; };
 		9453B48A887832A3FB1B51CB /* Pods-MyJournals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJournals.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyJournals/Pods-MyJournals.release.xcconfig"; sourceTree = "<group>"; };
 		BE1AF19A8296AABE4BC5DB90 /* Pods_MyJournals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyJournals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +83,7 @@
 				7977FF791FDA2EB30001C09C /* Assets.xcassets */,
 				7977FF7B1FDA2EB30001C09C /* LaunchScreen.storyboard */,
 				7977FF7E1FDA2EB30001C09C /* Info.plist */,
+				7977FFA91FDA4D520001C09C /* MyJournals.xcdatamodeld */,
 			);
 			path = MyJournals;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7977FF871FDA30580001C09C /* EntryTableViewCell.swift in Sources */,
+				7977FFAB1FDA4D520001C09C /* MyJournals.xcdatamodeld in Sources */,
 				7977FF751FDA2EB30001C09C /* EntryListViewController.swift in Sources */,
 				7977FF851FDA30260001C09C /* EntryCreatingViewController.swift in Sources */,
 				7977FF731FDA2EB30001C09C /* AppDelegate.swift in Sources */,
@@ -415,6 +419,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7977FFA91FDA4D520001C09C /* MyJournals.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7977FFAA1FDA4D520001C09C /* tt.xcdatamodel */,
+			);
+			currentVersion = 7977FFAA1FDA4D520001C09C /* tt.xcdatamodel */;
+			path = MyJournals.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7977FF671FDA2EB30001C09C /* Project object */;
 }
