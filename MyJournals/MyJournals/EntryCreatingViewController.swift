@@ -10,8 +10,21 @@ import UIKit
 
 class EntryCreatingViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var journalTitleTextField: UITextField!
+    @IBOutlet weak var contentTextField: UITextField!
+    @IBOutlet weak var buttonContainerView: UIView!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        cancelButton.addTarget(
+            self,
+            action: #selector(cancelBackEntryList),
+            for: .touchUpInside
+        )
 
         // Do any additional setup after loading the view.
     }
@@ -19,6 +32,10 @@ class EntryCreatingViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    @objc func cancelBackEntryList() {
+        dismiss(animated: true, completion: nil)
     }
     
 
