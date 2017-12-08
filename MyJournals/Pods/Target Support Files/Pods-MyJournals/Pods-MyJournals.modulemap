@@ -1,0 +1,6 @@
+framework module Pods_MyJournals {
+  umbrella header "Pods-MyJournals-umbrella.h"
+
+  export *
+  module * { export * }
+}

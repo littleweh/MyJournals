@@ -7,73 +7,100 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		799B750C1FDA209F00E25F52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799B750B1FDA209F00E25F52 /* AppDelegate.swift */; };
-		799B750E1FDA209F00E25F52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799B750D1FDA209F00E25F52 /* ViewController.swift */; };
-		799B75111FDA209F00E25F52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799B750F1FDA209F00E25F52 /* Main.storyboard */; };
-		799B75131FDA209F00E25F52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799B75121FDA209F00E25F52 /* Assets.xcassets */; };
-		799B75161FDA209F00E25F52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799B75141FDA209F00E25F52 /* LaunchScreen.storyboard */; };
+		7977FF731FDA2EB30001C09C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977FF721FDA2EB30001C09C /* AppDelegate.swift */; };
+		7977FF751FDA2EB30001C09C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977FF741FDA2EB30001C09C /* ViewController.swift */; };
+		7977FF781FDA2EB30001C09C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7977FF761FDA2EB30001C09C /* Main.storyboard */; };
+		7977FF7A1FDA2EB30001C09C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7977FF791FDA2EB30001C09C /* Assets.xcassets */; };
+		7977FF7D1FDA2EB30001C09C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7977FF7B1FDA2EB30001C09C /* LaunchScreen.storyboard */; };
+		D0CE7406E3B9E8F67CEE276E /* Pods_MyJournals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1AF19A8296AABE4BC5DB90 /* Pods_MyJournals.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		799B75081FDA209F00E25F52 /* MyJournals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyJournals.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		799B750B1FDA209F00E25F52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		799B750D1FDA209F00E25F52 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		799B75101FDA209F00E25F52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		799B75121FDA209F00E25F52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		799B75151FDA209F00E25F52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		799B75171FDA20A000E25F52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7977FF6F1FDA2EB30001C09C /* MyJournals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyJournals.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7977FF721FDA2EB30001C09C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7977FF741FDA2EB30001C09C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7977FF771FDA2EB30001C09C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7977FF791FDA2EB30001C09C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7977FF7C1FDA2EB30001C09C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7977FF7E1FDA2EB30001C09C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E3664DEFF4FA0DFC49A92B4 /* Pods-MyJournals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJournals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyJournals/Pods-MyJournals.debug.xcconfig"; sourceTree = "<group>"; };
+		9453B48A887832A3FB1B51CB /* Pods-MyJournals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJournals.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyJournals/Pods-MyJournals.release.xcconfig"; sourceTree = "<group>"; };
+		BE1AF19A8296AABE4BC5DB90 /* Pods_MyJournals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyJournals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		799B75051FDA209F00E25F52 /* Frameworks */ = {
+		7977FF6C1FDA2EB30001C09C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0CE7406E3B9E8F67CEE276E /* Pods_MyJournals.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		799B74FF1FDA209F00E25F52 = {
+		76A8CA73A99281A8F8AFAA18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				799B750A1FDA209F00E25F52 /* MyJournals */,
-				799B75091FDA209F00E25F52 /* Products */,
+				BE1AF19A8296AABE4BC5DB90 /* Pods_MyJournals.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7977FF661FDA2EB30001C09C = {
+			isa = PBXGroup;
+			children = (
+				7977FF711FDA2EB30001C09C /* MyJournals */,
+				7977FF701FDA2EB30001C09C /* Products */,
+				C0D745A4EBE5A2FFFE4D21F9 /* Pods */,
+				76A8CA73A99281A8F8AFAA18 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		799B75091FDA209F00E25F52 /* Products */ = {
+		7977FF701FDA2EB30001C09C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				799B75081FDA209F00E25F52 /* MyJournals.app */,
+				7977FF6F1FDA2EB30001C09C /* MyJournals.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		799B750A1FDA209F00E25F52 /* MyJournals */ = {
+		7977FF711FDA2EB30001C09C /* MyJournals */ = {
 			isa = PBXGroup;
 			children = (
-				799B750B1FDA209F00E25F52 /* AppDelegate.swift */,
-				799B750D1FDA209F00E25F52 /* ViewController.swift */,
-				799B750F1FDA209F00E25F52 /* Main.storyboard */,
-				799B75121FDA209F00E25F52 /* Assets.xcassets */,
-				799B75141FDA209F00E25F52 /* LaunchScreen.storyboard */,
-				799B75171FDA20A000E25F52 /* Info.plist */,
+				7977FF721FDA2EB30001C09C /* AppDelegate.swift */,
+				7977FF741FDA2EB30001C09C /* ViewController.swift */,
+				7977FF761FDA2EB30001C09C /* Main.storyboard */,
+				7977FF791FDA2EB30001C09C /* Assets.xcassets */,
+				7977FF7B1FDA2EB30001C09C /* LaunchScreen.storyboard */,
+				7977FF7E1FDA2EB30001C09C /* Info.plist */,
 			);
 			path = MyJournals;
+			sourceTree = "<group>";
+		};
+		C0D745A4EBE5A2FFFE4D21F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E3664DEFF4FA0DFC49A92B4 /* Pods-MyJournals.debug.xcconfig */,
+				9453B48A887832A3FB1B51CB /* Pods-MyJournals.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		799B75071FDA209F00E25F52 /* MyJournals */ = {
+		7977FF6E1FDA2EB30001C09C /* MyJournals */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 799B751A1FDA20A000E25F52 /* Build configuration list for PBXNativeTarget "MyJournals" */;
+			buildConfigurationList = 7977FF811FDA2EB30001C09C /* Build configuration list for PBXNativeTarget "MyJournals" */;
 			buildPhases = (
-				799B75041FDA209F00E25F52 /* Sources */,
-				799B75051FDA209F00E25F52 /* Frameworks */,
-				799B75061FDA209F00E25F52 /* Resources */,
+				F1D19F0825E16D5E50FF0B9E /* [CP] Check Pods Manifest.lock */,
+				7977FF6B1FDA2EB30001C09C /* Sources */,
+				7977FF6C1FDA2EB30001C09C /* Frameworks */,
+				7977FF6D1FDA2EB30001C09C /* Resources */,
+				958526C9A02E6C9F840FDC69 /* [CP] Embed Pods Frameworks */,
+				F447490F9EACB58A6A02FD1D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -81,26 +108,26 @@
 			);
 			name = MyJournals;
 			productName = MyJournals;
-			productReference = 799B75081FDA209F00E25F52 /* MyJournals.app */;
+			productReference = 7977FF6F1FDA2EB30001C09C /* MyJournals.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		799B75001FDA209F00E25F52 /* Project object */ = {
+		7977FF671FDA2EB30001C09C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = LostRfounds;
 				TargetAttributes = {
-					799B75071FDA209F00E25F52 = {
+					7977FF6E1FDA2EB30001C09C = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 799B75031FDA209F00E25F52 /* Build configuration list for PBXProject "MyJournals" */;
+			buildConfigurationList = 7977FF6A1FDA2EB30001C09C /* Build configuration list for PBXProject "MyJournals" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -108,54 +135,110 @@
 				en,
 				Base,
 			);
-			mainGroup = 799B74FF1FDA209F00E25F52;
-			productRefGroup = 799B75091FDA209F00E25F52 /* Products */;
+			mainGroup = 7977FF661FDA2EB30001C09C;
+			productRefGroup = 7977FF701FDA2EB30001C09C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				799B75071FDA209F00E25F52 /* MyJournals */,
+				7977FF6E1FDA2EB30001C09C /* MyJournals */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		799B75061FDA209F00E25F52 /* Resources */ = {
+		7977FF6D1FDA2EB30001C09C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				799B75161FDA209F00E25F52 /* LaunchScreen.storyboard in Resources */,
-				799B75131FDA209F00E25F52 /* Assets.xcassets in Resources */,
-				799B75111FDA209F00E25F52 /* Main.storyboard in Resources */,
+				7977FF7D1FDA2EB30001C09C /* LaunchScreen.storyboard in Resources */,
+				7977FF7A1FDA2EB30001C09C /* Assets.xcassets in Resources */,
+				7977FF781FDA2EB30001C09C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		958526C9A02E6C9F840FDC69 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MyJournals/Pods-MyJournals-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BNRCoreDataStack/BNRCoreDataStack.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BNRCoreDataStack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyJournals/Pods-MyJournals-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1D19F0825E16D5E50FF0B9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyJournals-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F447490F9EACB58A6A02FD1D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyJournals/Pods-MyJournals-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		799B75041FDA209F00E25F52 /* Sources */ = {
+		7977FF6B1FDA2EB30001C09C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				799B750E1FDA209F00E25F52 /* ViewController.swift in Sources */,
-				799B750C1FDA209F00E25F52 /* AppDelegate.swift in Sources */,
+				7977FF751FDA2EB30001C09C /* ViewController.swift in Sources */,
+				7977FF731FDA2EB30001C09C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		799B750F1FDA209F00E25F52 /* Main.storyboard */ = {
+		7977FF761FDA2EB30001C09C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				799B75101FDA209F00E25F52 /* Base */,
+				7977FF771FDA2EB30001C09C /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		799B75141FDA209F00E25F52 /* LaunchScreen.storyboard */ = {
+		7977FF7B1FDA2EB30001C09C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				799B75151FDA209F00E25F52 /* Base */,
+				7977FF7C1FDA2EB30001C09C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -163,7 +246,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		799B75181FDA20A000E25F52 /* Debug */ = {
+		7977FF7F1FDA2EB30001C09C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -220,7 +303,7 @@
 			};
 			name = Debug;
 		};
-		799B75191FDA20A000E25F52 /* Release */ = {
+		7977FF801FDA2EB30001C09C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -270,8 +353,9 @@
 			};
 			name = Release;
 		};
-		799B751B1FDA20A000E25F52 /* Debug */ = {
+		7977FF821FDA2EB30001C09C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E3664DEFF4FA0DFC49A92B4 /* Pods-MyJournals.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -285,8 +369,9 @@
 			};
 			name = Debug;
 		};
-		799B751C1FDA20A000E25F52 /* Release */ = {
+		7977FF831FDA2EB30001C09C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9453B48A887832A3FB1B51CB /* Pods-MyJournals.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,25 +388,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		799B75031FDA209F00E25F52 /* Build configuration list for PBXProject "MyJournals" */ = {
+		7977FF6A1FDA2EB30001C09C /* Build configuration list for PBXProject "MyJournals" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				799B75181FDA20A000E25F52 /* Debug */,
-				799B75191FDA20A000E25F52 /* Release */,
+				7977FF7F1FDA2EB30001C09C /* Debug */,
+				7977FF801FDA2EB30001C09C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		799B751A1FDA20A000E25F52 /* Build configuration list for PBXNativeTarget "MyJournals" */ = {
+		7977FF811FDA2EB30001C09C /* Build configuration list for PBXNativeTarget "MyJournals" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				799B751B1FDA20A000E25F52 /* Debug */,
-				799B751C1FDA20A000E25F52 /* Release */,
+				7977FF821FDA2EB30001C09C /* Debug */,
+				7977FF831FDA2EB30001C09C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 799B75001FDA209F00E25F52 /* Project object */;
+	rootObject = 7977FF671FDA2EB30001C09C /* Project object */;
 }
